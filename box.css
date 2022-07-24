@@ -1,0 +1,100 @@
+*{
+    margin: 0;padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Dancing Script', cursive;
+}
+figure{
+    width: 400px;
+    height: 300px;
+    margin: 100px auto;
+    position: relative;
+    border: 5px solid rgb(190, 61, 104);
+    border-radius: 10px/20px;
+}
+figure>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px/20px;
+}
+figure>figcaption{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;left: 0;
+    border-radius: 10px/20px;  
+}
+figure>figcaption::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;left: 0;
+    background: rgba(110, 109, 109, 0.568);
+    transition: 1s;
+    
+}
+figure:hover figcaption::before{
+    background: rgba(110, 109, 109, 0);
+    border-radius: 10px/20px;
+}
+figure:hover figcaption>label{
+   color: rgb(190, 11, 71);
+   border: 2px solid rgb(148, 78, 130);
+   border-radius: 10px/20px;
+}
+figure>figcaption>#para1{
+    display: none;
+    
+}
+figure>figcaption>label{
+    /* background: cornflowerblue; */
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    color: rgb(117, 74, 88);
+    font-weight: 800;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transition: 1s;
+}
+figure>figcaption>span{
+    display: block;
+    background: rgb(207, 87, 133);
+    width: 5px;
+    height: 0;
+    position: absolute;
+    top: 0;
+    transition: 1s;
+    z-index: 2;
+    
+}
+figure>figcaption>span:nth-of-type(1){
+    left: 40px;
+}
+figure>figcaption>span:nth-of-type(2){
+    left: 60px;
+}
+figure>figcaption>span:nth-of-type(3){
+    left: 80px;
+}
+figure>figcaption>input:checked ~ span:nth-of-type(1){
+    height: 65%;
+}
+figure>figcaption>input:checked +label{
+    background: none;
+    border: none;
+}
+figure>figcaption>input:checked ~ span:nth-of-type(2){
+    height: 60%;
+}
+figure>figcaption>input:checked ~ span:nth-of-type(3){
+    height: 55%;
+}
